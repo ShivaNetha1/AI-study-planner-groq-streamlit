@@ -15,9 +15,9 @@ st.title('Study Planner')
 st.write('Welcome to the Study Planner! Please enter your study goals and schedule below.')
 # st.text_input('What subjects do you want to study?')
 # st.text_input('How many hours per day do you want to study?')
-goal=st.text_input('what your goal?')
-days=st.number_input('how many days do you want to study?', min_value=1, step=1)
-hours=st.number_input('how many hours per day do you want to study?', min_value=1, step=1)  
+goal=st.text_input('What's your goal?')
+days=st.number_input('How many days do you want to study?', min_value=1, step=1)
+hours=st.number_input('How many hours per day do you want to study?', min_value=1, step=1)  
 
 
 def fetch_plan(goal, days, hours):
