@@ -2,7 +2,7 @@
 
 ### 🚀 Live Demo
 
-🔗 [Click here to use the app]([YOUR_STREAMLIT_LINK_HERE](https://ai-study-planner-llm.streamlit.app/))
+🔗 [Click here to use the app]([https://ai-study-planner-llm.streamlit.app/])
 
 ---
 A simple and interactive web application built with Streamlit and powered by Groq's LLaMA 3.3 model. This app helps users generate detailed, customized study plans based on their specific goals, available days, and daily study hours.
