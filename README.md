@@ -1,47 +1,161 @@
 # AI Study Planner
 
-### 🚀 Live Demo
+## Live Demo
 
-🔗 [Click here to use the app](https://ai-study-planner-llm.streamlit.app/)
+[Click here to use the app](https://ai-study-planner-llm.streamlit.app/)
 
----
-A simple and interactive web application built with Streamlit and powered by Groq's LLaMA 3.3 model. This app helps users generate detailed, customized study plans based on their specific goals, available days, and daily study hours.
+## Overview
+
+AI Study Planner is a beginner-friendly GenAI web application built with Streamlit and powered by the Groq API. It helps learners generate a personalized day-by-day study plan based on their goal, current skill level, available days, daily study hours, preferred learning style, and weak areas.
+
+The project demonstrates basic GenAI app development concepts such as prompt engineering, API integration, environment variable handling, Streamlit forms, session state, error handling, and downloadable AI-generated output.
 
 ## Features
 
-* **Customizable Study Goals**: Input whatever you want to learn.
-* **Flexible Scheduling**: Set the number of days and hours per day you want to dedicate to studying.
-* **AI-Powered Generation**: Uses the fast and powerful `llama-3.3-70b-versatile` model via the Groq API to create detailed, day-by-day study topics.
+- Personalized study plan generation using Groq-hosted LLMs.
+- Model selection from the sidebar.
+- Skill level selection: Beginner, Intermediate, or Advanced.
+- Study style selection:
+  - Balanced learning
+  - Exam preparation
+  - Project-based learning
+  - Revision focused
+- Optional weak areas or extra focus input.
+- Number of study days and hours per day controls.
+- Creativity slider to control response variation.
+- Response length slider to control output size.
+- Clean Markdown output with:
+  - Plan summary
+  - Day-by-day study table
+  - Daily time split
+  - Revision checkpoints
+  - Mini project or assessment idea
+  - Free resource suggestions
+  - Motivation and consistency tips
+- Session history for previously generated plans.
+- Download button to save the plan as a Markdown file.
+- API key validation using `.env` or Streamlit secrets.
+- Simple error handling for missing keys or failed API calls.
+
+## AI Models Used
+
+The app currently supports the following Groq models:
+
+- `llama-3.3-70b-versatile`
+- `qwen/qwen3-32b`
+- `llama-3.1-8b-instant`
+- `openai/gpt-oss-120b`
+
+## Tech Stack
+
+- Python
+- Streamlit
+- Groq API
+- python-dotenv
+
+## Project Structure
+
+```text
+AI-Study-Planner/
+|-- main.py
+|-- requirements.txt
+|-- README.md
+|-- .env
+`-- .gitignore
+```
 
 ## Prerequisites
 
-* Python 3.8+
-* A Groq API Key
+- Python 3.8 or above
+- Groq API key
 
 ## Installation
 
-1. **Navigate to the project directory**.
-2. **Create a virtual environment**:
-   ```bash
-   python -m venv .venv
-   ```
-3. **Activate the virtual environment**:
-   * On Windows: `.venv\Scripts\activate`
-   * On macOS/Linux: `source .venv/bin/activate`
-4. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-5. **Set up environment variables**:
-   Create a `.env` file in the root directory of the project and add your Groq API key:
-   ```env
-   GROQ_API_KEY=your_actual_api_key_here
-   ```
+1. Clone the repository.
+
+```bash
+git clone <your-repository-url>
+cd <your-project-folder>
+```
+
+2. Create a virtual environment.
+
+```bash
+python -m venv .venv
+```
+
+3. Activate the virtual environment.
+
+Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+4. Install dependencies.
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Create a `.env` file in the root directory.
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
+```
 
 ## Usage
 
-To start the application, run the following command in your terminal:
+Run the Streamlit app:
 
 ```bash
 streamlit run main.py
 ```
+
+Then open the local URL shown in your terminal, usually:
+
+```text
+http://localhost:8501
+```
+
+## How It Works
+
+1. The user enters a learning goal, study duration, daily study hours, and optional weak areas.
+2. The user selects model settings such as AI model, skill level, plan style, creativity, and response length.
+3. The app builds a structured system prompt and user prompt.
+4. The prompt is sent to the Groq chat completions API.
+5. The generated study plan is displayed in Markdown.
+6. The plan is stored in Streamlit session state and can be downloaded as a Markdown file.
+
+## GenAI Concepts Demonstrated
+
+- LLM API integration
+- Prompt engineering
+- System and user message separation
+- Temperature control
+- Token limit control
+- Streamlit session state
+- Environment variable management
+- Basic frontend design with Streamlit
+- Error handling and input validation
+
+## Fresher Interview Explanation
+
+You can explain this project as:
+
+> I built a Streamlit-based GenAI study planner using the Groq API. The app collects a user's learning goal, available time, skill level, and weak areas, then uses a structured prompt to generate a realistic day-by-day study plan. I added model selection, temperature and token controls, API key validation, session history, error handling, and a Markdown download option.
+
+## Future Improvements
+
+- Add PDF download support.
+- Add user login and persistent database storage.
+- Add calendar export.
+- Add progress tracking for completed study days.
+- Add a chatbot mode for follow-up questions about the generated plan.
+- Add RAG support to recommend resources from uploaded notes or documents.
