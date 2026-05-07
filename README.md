@@ -74,8 +74,8 @@ AI-Study-Planner/
 1. Clone the repository.
 
 ```bash
-git clone <your-repository-url>
-cd <your-project-folder>
+git clone https://github.com/ShivaNetha1/AI-study-planner-groq-streamlit
+cd AI-study-planner-groq-streamlit
 ```
 
 2. Create a virtual environment.
@@ -144,12 +144,6 @@ http://localhost:8501
 - Environment variable management
 - Basic frontend design with Streamlit
 - Error handling and input validation
-
-## Fresher Interview Explanation
-
-You can explain this project as:
-
-> I built a Streamlit-based GenAI study planner using the Groq API. The app collects a user's learning goal, available time, skill level, and weak areas, then uses a structured prompt to generate a realistic day-by-day study plan. I added model selection, temperature and token controls, API key validation, session history, error handling, and a Markdown download option.
 
 ## Future Improvements
 
